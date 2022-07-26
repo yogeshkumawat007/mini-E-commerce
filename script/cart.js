@@ -66,3 +66,6 @@ function deleteItem(index){
   display(cartData);  
 }
 
+
+// discount functionality
+
