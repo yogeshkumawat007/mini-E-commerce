@@ -1,0 +1,66 @@
+h1{
+    text-align: center;
+}
+.navbar{
+    background-color: teal;
+    display: flex;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    justify-content: space-between;
+    padding: 2%;
+    
+}
+
+#user_name{
+    color: yellow;
+}
+
+.filterDiv{
+    /* background-color: black; */
+    padding: 1%;
+    margin: 1% 0%;
+    text-align: center;
+}
+
+select{
+    /* background-color: red; */
+    padding: .8% 4%;
+    border: 1px solid rgb(143, 139, 139);
+    font-size: 18px;
+    margin-left: 2%;
+
+}
+
+.container{
+    width: 90%;
+    margin: auto;
+    border: 1px solid red;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: .5% 2%;
+    /* height: auto; */
+}
+
+.container > div{
+    /* border: 1px solid blue; */
+    padding: 2%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
+}
+
+.container > div img{
+    /* border: 1px solid yellow; */
+    width: 100%;
+    
+}
+
+.container > div > button{
+    padding: 2% 3%;  
+    background-color: black;  
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 2%;
+}
