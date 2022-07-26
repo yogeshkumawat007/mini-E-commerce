@@ -313,6 +313,6 @@ function cartFun(elem){
     cartData.push(elem);
     // console.log("cartData: ", cartData)
     localStorage.setItem("cartArr",JSON.stringify(cartData))
-    alert("item add in cart")
+    alert("item Added in cart")
 }
 
