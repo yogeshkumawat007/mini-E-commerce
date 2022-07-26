@@ -19,5 +19,5 @@ form.addEventListener("submit",function(event){
     signupLS.push(obj);
     localStorage.setItem("signupData",JSON.stringify(signupLS))
 
-    console.log(signupLS)
+    window.location.href = "login.html"
 })
