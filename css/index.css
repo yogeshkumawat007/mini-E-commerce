@@ -9,6 +9,8 @@ h1{
     font-weight: bold;
     justify-content: space-between;
     padding: 2%;
+    position: sticky;
+    top: 0%;
     
 }
 
