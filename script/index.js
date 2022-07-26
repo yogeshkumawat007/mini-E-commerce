@@ -311,6 +311,8 @@ brand_filter.addEventListener("change", function(){
 function cartFun(elem){
     
     cartData.push(elem);
-    console.log("cartData: ", cartData)
+    // console.log("cartData: ", cartData)
+    localStorage.setItem("cartArr",JSON.stringify(cartData))
+    alert("item add in cart")
 }
 

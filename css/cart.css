@@ -1,0 +1,9 @@
+.totalPrice{
+        /* background-color: black; */
+        padding: 1%;
+        margin: 1% 0%;
+        text-align: center;
+        font-size: 25px;
+        font-weight: 600;
+        align-items: center;
+}
