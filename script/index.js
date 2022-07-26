@@ -257,9 +257,9 @@ function display(product_data) {
     let button = document.createElement("button");
     button.textContent = "Add to Cart";
 
-    button.addEventListener("click",function(){
-        cartFun(elem)
-    })
+    button.addEventListener("click", function () {
+      cartFun(elem);
+    });
 
     product.append(img, brand, price, catagory, button);
     let container = document.querySelector(".container");
@@ -273,12 +273,9 @@ display(product_data);
 let cat_filter = document.querySelector("#catagory_filter");
 
 cat_filter.addEventListener("change", function () {
-
   if (cat_filter.value === "") {
     display(product_data);
-  } 
-  
-  else {
+  } else {
     let filterArr = product_data.filter(function (elem) {
       return elem.catagory === cat_filter.value;
       // console.log(elem.catagory === cat_filter.value )
@@ -290,29 +287,31 @@ cat_filter.addEventListener("change", function () {
 
 let brand_filter = document.querySelector("#brand_filter");
 
-brand_filter.addEventListener("change", function(){
+brand_filter.addEventListener("change", function () {
+  if (brand_filter.value === "") {
+    display(product_data);
+  } else {
+    let filteredArr = product_data.filter(function (elem) {
+      return elem.brand === brand_filter.value;
+    });
 
-    if ( brand_filter.value === "" ){
-        display(product_data)
-    }
-
-    else{
-        let filteredArr = product_data.filter(function(elem){
-            return elem.brand === brand_filter.value;
-        })
-    
-        display(filteredArr)
-    }
-})
-
+    display(filteredArr);
+  }
+});
 
 // Add to cart functionality
 
-function cartFun(elem){
-    
-    cartData.push(elem);
-    // console.log("cartData: ", cartData)
-    localStorage.setItem("cartArr",JSON.stringify(cartData))
-    alert("item Added in cart")
-}
+function cartFun(elem) {
 
+  for (let i = 0; i < cartData.length; i++ ){
+
+    if ( cartData[i].productID === elem.productID ){
+      alert("Product is already in Cart")
+      return;
+    }
+  }
+
+  cartData.push(elem);
+  localStorage.setItem("cartArr",JSON.stringify(cartData))
+  alert("Product added successfully")
+}
