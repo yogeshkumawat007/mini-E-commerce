@@ -8,9 +8,6 @@ document.querySelector("#user_name").textContent = loginData.name;
 let cartData = JSON.parse(localStorage.getItem("cartArr")) || [];
 
 let total = document.querySelector("#span");
-let sum = 0;
-
-
 
 
 
@@ -18,7 +15,14 @@ let sum = 0;
 
 function display(cartData) {
   
-  cartData.forEach(function (elem) {
+  let sum = 0;
+  
+  document.querySelector(".container").innerHTML = "";
+
+  cartData.forEach(function (elem,index) {
+
+    sum += Number(elem.price)
+
     let product = document.createElement("div");
 
     let img = document.createElement("img");
@@ -33,30 +37,32 @@ function display(cartData) {
     let catagory = document.createElement("p");
     catagory.textContent = elem.catagory;
 
-    let button = document.createElement("button");
-    button.textContent = "Delete Item";
+    let deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "Delete Item";
 
-    button.addEventListener("click",function(){
-        deleteItem(elem)
+    deleteBtn.addEventListener("click",function(){
+        deleteItem(index)
     })
 
-    product.append(img, brand, price, catagory, button);
+    product.append(img, brand, price, catagory, deleteBtn);
     let container = document.querySelector(".container");
 
     container.append(product);
-
-
-    // adding total cart value
-    sum += +(elem.price)
-    // console.log("sum: ",typeof sum, sum)
-    total.textContent = sum
   });
+
+  total.textContent = sum;
 }
 display(cartData);
 
+
 // deleting product
 
-function deleteItem(elem){
+function deleteItem(index){
     
+  // console.log(index);
+  cartData.splice(index,1);
+
+  localStorage.setItem("cartArr",JSON.stringify(cartData))
+  display(cartData);  
 }
 
