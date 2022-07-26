@@ -20,8 +20,8 @@ input[type="password"] {
   padding: 12px;
   border: 1px solid #ccc;
   box-sizing: border-box;
-  margin-top: 4px;
-  margin-bottom: 6px;
+  margin-top: 5px;
+  margin-bottom: 7px;
 }
 
 input[type="submit"] {
@@ -29,4 +29,13 @@ input[type="submit"] {
   background-color: teal;
   color: white;
   font-size: 18px;
+}
+
+p{
+    font-size: 18px;
+    text-align: center;
+    line-height: 0;
+}
+a{
+    font-size: 20px;
 }
