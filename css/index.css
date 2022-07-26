@@ -40,7 +40,7 @@ select{
 .container{
     width: 90%;
     margin: auto;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: grid;
     grid-template-columns: repeat(4,1fr);
     gap: .5% 2%;
