@@ -6,26 +6,29 @@
         font-size: 25px;
         font-weight: 600;
         align-items: center;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .canvas{
-        border: 1px solid red;
+        /* border: 1px solid red; */
         display: flex;
         padding: 2%;
         gap: 2%;
+        /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
 }
 
 .container{
         width: 70%;
-        border: 1px solid blue;
+        /* border: 1px solid blue; */
         display: grid;
         grid-template-columns: repeat(3,1fr);
         /* margin: 0; */
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .totalPrice{
         width: 30%;
-        border: 1px solid blue;
+        /* border: 1px solid blue; */
         /* position: sticky; */
         /* right: 10%; */
         /* position: fixed;

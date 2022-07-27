@@ -1,0 +1,17 @@
+input[type="Number"],
+input[type="submit"],
+input[type="Date"],
+input[type="text"]{
+  /* background-color: #fff; */
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin-top: 5px;
+  margin-bottom: 7px;
+}
+
+#checkPrice{
+  color:  red;
+  font-size: 28px;
+}
