@@ -1,7 +1,7 @@
 // adding name in navbar
 let loginData = JSON.parse(localStorage.getItem("loginData"));
 document.querySelector("#user_name").textContent = loginData.name;
-
+let newNumber;
 
 // cart functaility start from here
 
@@ -69,3 +69,54 @@ function deleteItem(index){
 
 // discount functionality
 
+document.getElementById("dis_btn").addEventListener("click",disFun);
+
+function disFun(){
+  
+  let coupon = document.getElementById("coupon").value;
+
+  if ( coupon === "yogi3000" ){
+
+    alert("You can get 60% discount")
+
+    let cartPrice = Number(total.textContent);
+    // console.log(cartPrice)
+
+    let disPrice = (cartPrice*60)/100;
+    
+    let discountSpan = document.getElementById("discountSpan");
+
+    discountSpan.textContent = disPrice;
+    
+    let new_price = document.getElementById("new_price");
+
+    new_price.textContent = "New Price: "+ Math.floor(cartPrice - disPrice);
+
+    newNumber = Math.floor(cartPrice - disPrice);
+
+    localStorage.setItem("cartMoney",JSON.stringify(Math.floor(cartPrice - disPrice)));
+    
+  }
+  else{
+    alert("Coupon code is invaild")
+  }
+}
+
+
+// checkout functionality
+
+let checkBtn = document.getElementById("checkBtn");
+checkBtn.addEventListener("click", checkfun);
+
+
+
+function checkfun(){
+  if ( Number(total.textContent) === 0 ){
+    alert ("Your cart is empty")
+    return
+  }
+
+  JSON.stringify(newNumber) || localStorage.setItem("cartMoney",JSON.stringify(Number(total.textContent)))
+  // console.log(Number(total.textContent))
+  window.location.href = "checkout.html"
+}
