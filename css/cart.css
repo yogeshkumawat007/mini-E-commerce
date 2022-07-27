@@ -52,7 +52,7 @@ input{
         font-size: 18px;
 }
 
-button{
+.totalPrice  button{
         width: 70%;
         padding: 2%;
         box-sizing: border-box;
